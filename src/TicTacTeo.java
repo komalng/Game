@@ -5,10 +5,15 @@ public class TicTacTeo {
         String [][] board = {{"-","-","-"},{"-","-","-"},{"-","-","-"}};
        printBoard(board);
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter Numbers");
-        int inputForRowNumber = scanner.nextInt();
-        int inputForRowIndex = scanner.nextInt();
-        System.out.println(board[inputForRowNumber][inputForRowIndex]);
+
+        int i = 0;
+        while(i < board[0].length*board[0].length){
+            System.out.println("Enter Numbers");
+            int inputForRowNumber = scanner.nextInt();
+            int inputForRowIndex = scanner.nextInt();
+            System.out.println(board[inputForRowNumber][inputForRowIndex]);
+            i = i + 1;
+        }
     }
 
     public static void printBoard(String [][] board ){
