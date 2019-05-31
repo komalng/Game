@@ -1,7 +1,12 @@
+import java.util.Scanner;
+
 public class TicTacTeo {
     public static void main(String[] args) {
         String [][] board = {{"-","-","-"},{"-","-","-"},{"-","-","-"}};
         System.out.println(printBoard(board));
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("As a player what do you want to be X or Y");
+        String choice = scanner.next();
     }
 
     public static String printBoard(String [][] board ){
