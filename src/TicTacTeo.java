@@ -20,9 +20,9 @@ public class TicTacTeo {
 
     public static String getTurn(int a){
             if(a%2==0){
-                return "X Turn";
+                return "x Turn";
             }
-            return "Y Turn";
+            return "o Turn";
         }
     public static String getXOrO(int j,String [][]board, int inputForRowNumber,int inputForRowIndex){
         if(j%2 == 0){
