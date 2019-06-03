@@ -12,7 +12,7 @@ public class TicTacTeo {
                 System.out.println("Enter Numbers");
                 int inputForRowNumber = scanner.nextInt();
                 int inputForRowIndex = scanner.nextInt();
-                board[inputForRowNumber - 1][inputForRowIndex - 1] = "o";
+                getXOrO(i,board,inputForRowNumber,inputForRowIndex);
                 printBoard(board);
             i = i + 1;
         }
@@ -24,6 +24,15 @@ public class TicTacTeo {
             }
             return "Y Turn";
         }
+    public static String getXOrO(int j,String [][]board, int inputForRowNumber,int inputForRowIndex){
+        if(j%2 == 0){
+            return board[inputForRowNumber-1][inputForRowIndex-1] = " o";
+        }
+        return board[inputForRowNumber-1][inputForRowIndex-1] = " x";
+
+
+    }
+
 
     public static void printBoard(String [][] board ){
         for(int i = 0;i < 3; i++){
