@@ -11,7 +11,7 @@ public class TicTacTeo {
             System.out.println("Enter Numbers");
             int inputForRowNumber = scanner.nextInt();
             int inputForRowIndex = scanner.nextInt();
-            board[inputForRowNumber][inputForRowIndex] = " 0";
+            board[inputForRowNumber-1][inputForRowIndex-1] = "0";
             printBoard(board);
             i = i + 1;
         }
