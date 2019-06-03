@@ -8,11 +8,23 @@ public class TicTacTeo {
 
         int i = 0;
         while(i < board[0].length*board[0].length){
-            System.out.println("Enter Numbers");
-            int inputForRowNumber = scanner.nextInt();
-            int inputForRowIndex = scanner.nextInt();
-            board[inputForRowNumber-1][inputForRowIndex-1] = "0";
-            printBoard(board);
+            if(i%2==0) {
+                System.out.println("X Turn");
+                System.out.println("Enter Numbers");
+                int inputForRowNumber = scanner.nextInt();
+                int inputForRowIndex = scanner.nextInt();
+                board[inputForRowNumber - 1][inputForRowIndex - 1] = "0";
+                printBoard(board);
+            }
+            else{
+                System.out.println("Y Turn");
+                System.out.println("Enter Numbers");
+                int inputForRowNumber = scanner.nextInt();
+                int inputForRowIndex = scanner.nextInt();
+                board[inputForRowNumber - 1][inputForRowIndex - 1] = "0";
+                printBoard(board);
+
+            }
             i = i + 1;
         }
     }
