@@ -1,20 +1,25 @@
+package main.java.logic;
+
 import java.util.Scanner;
 
 public class TicTacTeo {
     public static void main(String[] args) {
-        String[][] board = {{"-", "-", "-"}, {"-", "-", "-"}, {"-", "-", "-"}};
-        printBoard(board);
+        String [][]boards = {{"-", "-", "-"}, {"-", "-", "-"}, {"-", "-", "-"}};
+
+        Board board = new Board();
+        board.printBoard();
         Scanner scanner = new Scanner(System.in);
 
         int i = 0;
-        while (i < board[0].length * board[0].length) {
+        while (i < 10) {
             System.out.println(getTurn(i));
             System.out.println("Enter Numbers");
             int inputForRowNumber = scanner.nextInt();
             int inputForRowIndex = scanner.nextInt();
-            getXOrO(i, board, inputForRowNumber, inputForRowIndex);
-            printBoard(board);
-            checkWinner(getXOrO(i, board, inputForRowNumber, inputForRowIndex),board,i);
+            String symbol = scanner.next();
+            board.update(inputForRowNumber,inputForRowIndex,symbol);
+            board.printBoard();
+            checkWinner(getXOrO(i, boards, inputForRowNumber, inputForRowIndex),boards,i);
             i = i + 1;
         }
     }
@@ -28,9 +33,9 @@ public class TicTacTeo {
 
     public static String getXOrO(int j, String[][] board, int inputForRowNumber, int inputForRowIndex) {
         if (j % 2 == 0) {
-            return board[inputForRowNumber - 1][inputForRowIndex - 1] = " x";
+            return board[inputForRowNumber][inputForRowIndex] = " x";
         }
-        return board[inputForRowNumber - 1][inputForRowIndex - 1] = " o";
+        return board[inputForRowNumber][inputForRowIndex] = " o";
 
 
     }
@@ -65,7 +70,7 @@ public class TicTacTeo {
             System.out.println("Draw");
         }
 
-        }
+    }
 
     public static void printBoard(String[][] board) {
         for (int i = 0; i < 3; i++) {
